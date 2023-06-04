@@ -1,3 +1,3 @@
-module ride-share
+module app
 
 go 1.20
