@@ -30,3 +30,10 @@ app
 
 msg "Pruning stale Docker images"
 sudo docker image prune -f
+
+duration=$SECONDS
+
+echo
+msg "Deployment completed successfully in $(($duration / 60)) seconds."
+msg "Press Enter to exit."
+read
