@@ -1,3 +1,13 @@
+#!/bin/bash
+SECONDS=0
+
+cd $HOME/app
+
+msg() {
+	# Echo message in green color
+	echo -e "\033[1;32m$1\033[0m"
+}
+
 msg "Pulling from GitHub"
 git pull
 
