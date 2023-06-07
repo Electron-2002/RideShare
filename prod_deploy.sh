@@ -3,15 +3,14 @@ SECONDS=0
 
 cd $HOME/app
 
-msg() {
-	# Echo message in green color
-	echo -e "\033[1;32m$1\033[0m"
+msg () {
+  echo -e "\n$1\n--------------------\n"
 }
 
 msg "Pulling from GitHub"
 git pull
 
-msg "Building Docker image"
+msg "Building the 'app' image"
 sudo docker build --tag app .
 
 msg "Stopping containers"
@@ -26,6 +25,6 @@ sudo docker image prune -f
 duration=$SECONDS
 
 echo
-msg "Deployment completed successfully in $(($duration / 60)) seconds."
-msg "Press Enter to exit."
+msg "Deploy finished in $(($duration % 60)) seconds."
+msg "Press Enter to exit"
 read
